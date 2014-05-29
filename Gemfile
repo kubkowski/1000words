@@ -61,3 +61,6 @@ end
 
 # Use Foundation framework
 gem 'foundation-rails'
+
+# Use Sorcery
+gem 'sorcery'
