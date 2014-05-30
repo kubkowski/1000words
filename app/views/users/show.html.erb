@@ -5,5 +5,11 @@
   <%= @user.email %>
 </p>
 
+<div class="span8">
+  <% if @user.articles.any? %>
+    <h3>Articles (<%= @user.articles.count %>)</h3>
+  <% end %> 
+</div>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
