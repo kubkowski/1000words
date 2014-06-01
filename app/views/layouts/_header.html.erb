@@ -1,9 +1,22 @@
-<div id="nav">
+<header class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+    	<h1><%= link_to "1000 words", '#', id: "logo" %></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
       <% if current_user %>
-        <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-        <%= link_to "Logout", :logout, method: :post %>
+        <li class="divider"></li>
+        <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Logout", :logout, method: :post %></li>
       <% else %>
-        <%= link_to "Register", new_user_path %> |
-        <%= link_to "Login", :login %>
+        <li class="divider"></li>
+        <li><%= link_to "Register", new_user_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Login", :login %></li>
       <% end %>
-</div>
+    </ul>
+  </section>
+</header>

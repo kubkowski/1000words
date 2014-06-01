@@ -1,4 +1,4 @@
-<h1>Listing users</h1>
+<h3>User list</h3>
 
 <table>
   <thead>
@@ -14,9 +14,9 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.articles.count %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user, :class => "button small round" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), :class => "button small round" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small round" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path, :class => "button small round" %>
