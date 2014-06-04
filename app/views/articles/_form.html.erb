@@ -17,13 +17,43 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :class => "word_count" %>
   </div>
+
+  <div id="article_body_count" style="display:none"></div>
+
   <div class="field">
     <%= f.label :word_count %><br>
-    <%= f.number_field :word_count %>
+    <%= f.number_field :word_count, :style =>"display:none" %>
   </div>
   <div class="actions">
     <%= f.submit :class => "button small round" %>
   </div>
+
+  <script>
+    
+    $(document).ready(function() {
+
+      $('.word_count').each(function() {
+        var input = '#' + 'article_body';
+        var count = '#' + 'article_word_count';
+        $(count).show();
+        word_count(input, count);
+        $(this).keyup(function() { word_count(input, count) });
+      });
+
+    });
+
+    function word_count(field, count) {
+
+      var number = 0;
+      var matches = $(field).val().match(/\b/g);
+      if(matches) {
+        number = matches.length/2;
+      }
+      $(count).val(number);
+
+    }
+
+  </script>
 <% end %>
