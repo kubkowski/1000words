@@ -22,9 +22,9 @@
 
   <div id="article_body_count" style="display:none"></div>
 
-  <div class="field">
+  <div class="field" >
     <%= f.label :word_count %><br>
-    <%= f.number_field :word_count, :style =>"display:none" %>
+    <%= f.number_field :word_count, :style =>"display:none", :readonly => "readonly" %>
   </div>
   <div class="actions">
     <%= f.submit :class => "button small round" %>
@@ -38,6 +38,7 @@
         var input = '#' + 'article_body';
         var count = '#' + 'article_word_count';
         $(count).show();
+        $(count).enable;
         word_count(input, count);
         $(this).keyup(function() { word_count(input, count) });
       });
