@@ -64,3 +64,6 @@ gem 'foundation-rails'
 
 # Use Sorcery
 gem 'sorcery'
+
+# Use Calendar
+gem 'fullcalendar_engine'
